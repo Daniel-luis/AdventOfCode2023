@@ -1,11 +1,11 @@
-class ZCL_DAY_ONE definition
-  public
-  final
-  create public .
+CLASS zcl_day_one DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
-protected section.
-private section.
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
