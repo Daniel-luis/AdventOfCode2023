@@ -1,11 +1,12 @@
 INTERFACE zi_aoc
   PUBLIC .
 
-  types ty_input type string_table.
-
-  methods:
-    get_input_data returning value rt_input type ty_input,
-    part_one,
-    part_two.
+  METHODS:
+    solve_part_one
+      IMPORTING it_input           TYPE string_table
+      RETURNING VALUE(rv_response) TYPE string,
+    solve_part_two
+      IMPORTING it_input           TYPE string_table
+      RETURNING VALUE(rv_response) TYPE string.
 
 ENDINTERFACE.
