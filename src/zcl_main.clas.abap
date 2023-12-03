@@ -13,6 +13,9 @@ CLASS zcl_main DEFINITION
         IMPORTING url              TYPE string
         RETURNING VALUE(ro_result) TYPE REF TO if_web_http_client
         RAISING   cx_static_check.
+
+    CLASS-DATA:
+      out TYPE REF TO if_oo_adt_classrun_out.
   PROTECTED SECTION.
   PRIVATE SECTION.
     CONSTANTS: lc_day_number TYPE i VALUE 1.
@@ -25,10 +28,15 @@ CLASS zcl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+    me->out = out.
     DATA(lt_input) = get_input_data( ).
     data(lv_response_part1) = new zcl_day_1( )->zi_aoc~solve_part_one( it_input = lt_input ).
 
     out->write( |Part 1: { lv_response_part1 } | ).
+
+    data(lv_response_part2) = new zcl_day_1( )->zi_aoc~solve_part_two( it_input = lt_input ).
+
+    out->write( |Part 2: { lv_response_part2 } | ).
 
   ENDMETHOD.
 
